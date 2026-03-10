@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #f0f6f4;
+  background: #081311;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Forest Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(5,15,15,0.85), rgba(5,15,15,0.95)),
+    url("https://i.postimg.cc/d3J8Kqhk/Gemini-Generated-Image-n9jr04n9jr04n9jr.png auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -3;
+}
+
+/* Fireflies */
+.fireflies {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00ffd0;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ffd0, 0 0 20px #00ffd0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Emoji Mushrooms */
+.emoji-mushrooms {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.emoji-mushroom {
+  position: absolute;
+  font-size: 28px;
+  animation: floatMushroom 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatMushroom {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* Hero */
+.hero {
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: #7fffd4;
+  text-shadow: 0 0 20px rgba(127,255,212,0.6);
+}
+
+.logo-slot {
+  margin: 30px 0;
+}
+
+.logo-slot img {
+  max-width: 250px;
+  width: 70%;
+  filter: drop-shadow(0 0 30px rgba(0,255,200,0.5));
+  border-radius: 50%;     /* rend le contour circulaire */
+  object-fit: cover;      /* remplit le cercle sans déformer l’image */
+}
+
+/* Menu */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.menu-section {
+  margin-bottom: 70px;
+  background: rgba(10, 25, 22, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.menu-section h2 {
+  margin-bottom: 25px;
+  color: #9ef7e7;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.product {
+  background: rgba(15, 35, 30, 0.9);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,200,0.1);
+  transition: 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0,255,200,0.3);
+}
+
+.product-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product h3 {
+  padding: 15px 15px 5px;
+  color: #d6fffa;
+}
+
+.product p {
+  padding: 0 15px 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0,0,0,0.4);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
